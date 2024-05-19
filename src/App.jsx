@@ -1,10 +1,11 @@
 import React from 'react'
 import { Button } from './components/ui/button'
+import Header from './components/Header'
 
 const App = () => {
   return (
     <>
-      <div className='bg-slate-600'>App</div>
+      <Header/>
       <Button>click kr</Button>
     </>
   )
