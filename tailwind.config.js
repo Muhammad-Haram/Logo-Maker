@@ -25,7 +25,7 @@ module.exports = {
         foreground: "hsl(var(--foreground))",
         primary: {
           DEFAULT: "#F15757",
-          foreground: "hsl(var(--primary-foreground))",
+          foreground: "#fff",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",

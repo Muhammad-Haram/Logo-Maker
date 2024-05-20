@@ -6,7 +6,6 @@ const App = () => {
   return (
     <>
       <Header/>
-      <Button>click kr</Button>
     </>
   )
 }
