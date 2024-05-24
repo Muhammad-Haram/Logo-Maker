@@ -3,6 +3,7 @@ import Header from './components/Header'
 import SideNav from './components/SideNav'
 import IconCantroller from './components/IconCantroller'
 import BackgroundCantroller from './components/BackgroundCantroller'
+import LogoPreview from './components/LogoPreview'
 
 const App = () => {
 
@@ -21,7 +22,7 @@ const App = () => {
         </div>
 
         <div className='md:col-span-4'>
-          icon preview
+         <LogoPreview/>
         </div>
 
       </div>
