@@ -1,14 +1,14 @@
 import React from 'react'
-import { Button } from './components/ui/button'
 import Header from './components/Header'
 import SideNav from './components/SideNav'
 
 const App = () => {
+
   return (
     <>
       <Header />
       <div className='w-64 fixed'>
-        <SideNav />
+        <SideNav selectedIndex={(v)=>{console.log(v)}} />
       </div>
       <div className='ml-64'>
         body
