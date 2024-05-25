@@ -18,7 +18,7 @@ const LogoPreview = () => {
 
     return (
         <div className='flex items-center justify-center h-screen'>
-            <div className='w-[500px] h-[500px] bg-gray-200 outline-dotted outline-gray-300'>
+            <div className='w-[500px] h-[500px] bg-gray-200 outline-dotted outline-gray-300 mb-[70px]'>
                 <div className='h-full w-full' style={{
                     borderRadius: storageValue?.bgrounded,
                     backgroundColor: storageValue?.bgcolor,
