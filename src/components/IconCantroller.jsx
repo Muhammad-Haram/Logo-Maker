@@ -1,11 +1,13 @@
 import { Smile } from 'lucide-react'
 import React, { useState } from 'react'
 import { Slider } from "@/components/ui/slider"
+import ColorPicker from 'react-best-gradient-color-picker';
 
 const IconCantroller = () => {
 
   const [size, setsize] = useState(280);
   const [rotate, setrotate] = useState(0);
+  const [color, setcolor] = useState('#fff');
 
 
   return (
@@ -29,6 +31,11 @@ const IconCantroller = () => {
           <Slider defaultValue={[0]} max={360} step={1} 
           onValueChange={(e)=>{setrotate(e[0])}}
           />
+        </div>
+
+        <div className='py-2'>
+          <label className='p-2 flex justify-between items-center'>Icon Color</label>
+          <ColorPicker hideController = {true} selectedColor={(color)=>{setcolor(color)}}/>
         </div>
 
       </div>
