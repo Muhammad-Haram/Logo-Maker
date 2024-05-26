@@ -1,5 +1,5 @@
-import { Smile } from 'lucide-react'
-import React, { useState } from 'react'
+import { AlignCenterHorizontal, Smile } from 'lucide-react'
+import React, { useEffect, useState } from 'react'
 import { Slider } from "@/components/ui/slider"
 import ColorPicker from 'react-best-gradient-color-picker';
 
@@ -9,6 +9,34 @@ const IconCantroller = () => {
   const [rotate, setrotate] = useState(0);
   const [color, setcolor] = useState('#fff');
 
+
+  const [storageValue, setStorageValue] = useState(null);
+
+  useEffect(() => {
+    try{
+        const value = JSON.parse(localStorage.getItem('value'));
+        setStorageValue(value);
+        console.log('setStorageValue' , value);
+      }catch(e){  
+        console.log("Error parsing storage value");
+      }
+
+  }, []);
+
+  useEffect(() => {
+
+    const updateValue = {
+      ...storageValue,
+      size: size,
+      rotate: rotate,
+      color: color,
+      icon: 'smile'
+    }
+
+    localStorage.setItem('value', JSON.stringify(updateValue));
+    
+
+  }, [size, rotate, color])
 
   return (
 
@@ -21,21 +49,21 @@ const IconCantroller = () => {
         </div>
         <div className='py-2'>
           <label className='p-2 flex justify-between items-center'>Size <span>{size} px</span> </label>
-          <Slider defaultValue={[280]} max={512} step={1} 
-          onValueChange={(e)=>{setsize(e[0])}}
+          <Slider defaultValue={[280]} max={512} step={1}
+            onValueChange={(e) => { setsize(e[0]) }}
           />
         </div>
 
         <div className='py-2'>
           <label className='p-2 flex justify-between items-center'>Rotate <span>{rotate} °</span> </label>
-          <Slider defaultValue={[0]} max={360} step={1} 
-          onValueChange={(e)=>{setrotate(e[0])}}
+          <Slider defaultValue={[0]} max={360} step={1}
+            onValueChange={(e) => { setrotate(e[0]) }}
           />
         </div>
 
         <div className='py-2'>
           <label className='p-2 flex justify-between items-center'>Icon Color</label>
-          <ColorPicker hideController = {true} selectedColor={(color)=>{setcolor(color)}}/>
+          <ColorPicker hideController={true} selectedColor={(color) => { setcolor(color) }} />
         </div>
 
       </div>
