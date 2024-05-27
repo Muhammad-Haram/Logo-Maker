@@ -7,7 +7,7 @@ const IconCantroller = () => {
 
   const [size, setsize] = useState(280);
   const [rotate, setrotate] = useState(0);
-  const [color, setcolor] = useState('#fff');
+  const [color, setcolor] = useState();
 
 
   const [storageValue, setStorageValue] = useState(null);
