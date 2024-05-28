@@ -1,13 +1,15 @@
 import { AlignCenterHorizontal, Smile } from 'lucide-react'
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Slider } from "@/components/ui/slider"
 import ColorPicker from 'react-best-gradient-color-picker';
+import { UpdateContextStorage } from '@/context/UpdateContextStorage';
 
 const IconCantroller = () => {
 
   const [size, setsize] = useState(280);
   const [rotate, setrotate] = useState(0);
   const [color, setcolor] = useState();
+  const {UpdateStorage, setUpdateStorage} = useContext(UpdateContextStorage); 
 
 
   const [storageValue, setStorageValue] = useState(null);
@@ -16,9 +18,7 @@ const IconCantroller = () => {
     try{
         const value = JSON.parse(localStorage.getItem('value'));
         setStorageValue(value);
-        console.log('setStorageValue' , value);
       }catch(e){  
-        console.log("Error parsing storage value");
       }
 
   }, []);
@@ -33,6 +33,7 @@ const IconCantroller = () => {
       icon: 'smile'
     }
 
+    setUpdateStorage(updateValue);
     localStorage.setItem('value', JSON.stringify(updateValue));
     
 
