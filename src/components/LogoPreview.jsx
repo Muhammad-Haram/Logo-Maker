@@ -11,6 +11,7 @@ const LogoPreview = () => {
     useEffect(() => {
         const storageData = JSON.parse(localStorage.getItem('value'));
         console.log(storageData)
+        //error
         setStorageValue(storageData)
     }, [UpdateStorage])
 
