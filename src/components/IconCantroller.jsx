@@ -27,10 +27,10 @@ const IconCantroller = () => {
 
     const updateValue = {
       ...storageValue,
-      size: size,
+      iconSize: size,
       rotate: rotate,
-      color: color,
-      icon: 'smile'
+      iconColor: color,
+      icon: 'Smile'
     }
 
     setUpdateStorage(updateValue);
